@@ -1,5 +1,5 @@
 ---
-# vars file for oracledb
+# vars file for linux_role
 partion_device: /dev/sdb
 partion_size: 10GB
 vname: myvolume
