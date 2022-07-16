@@ -1,8 +1,5 @@
 ---
 # vars file for oracledb
-#
-# Note: Storage and Memory are specified in MB
-
 partion_device: /dev/sdb
 partion_size: 10GB
 vname: myvolume

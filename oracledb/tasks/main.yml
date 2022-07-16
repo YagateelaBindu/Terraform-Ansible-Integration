@@ -1,43 +1,43 @@
 - name: create partition
   parted:
-    device: {{partion_device}}
+    device: {{ partion_device }}
     number: 1
     flags: [ lvm ]
     state: present
-    part_end: {{partion_size}}
+    part_end: {{ partion_size }}
   become: true
 
 - name: creating volume group
   lvg:
-    vg: {{vname}}
+    vg: {{ vname }}
     pvs: /dev/sdb1
   become: true
 
 - name: creating logical volume
   lvol:
-    vg: {{vname}}
-    lv:  {{lname}}
+    vg: {{ vname }}
+    lv:  {{ lname }}
     size: 6g
     force: yes
   become: true
 
 - name: Create directory /u01
   file:
-    path: {{dir_name}}
+    path: {{ dir_name }}
     state: directory
     mode: '0755'
   become: true
 
 - name: format the xfs filesystem
   filesystem:
-    fstype: {{fstype}}
+    fstype: {{ fstype }}
     dev: /dev/{{vname}}/{{lname}}
   become: true
 
 - name: mount the lv on /u01
   mount:
-    path: {{dir_name}}
+    path: {{ dir_name }}
     src: /dev/{{vname}}/{{lname}}
-    fstype: {{fstype}}
+    fstype: {{ fstype }}
     state: mounted
   become: true
