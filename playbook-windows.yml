@@ -1,0 +1,4 @@
+- name: playbook for Attach Volume to linux
+  hosts: localhost
+  roles:
+    - windows_role

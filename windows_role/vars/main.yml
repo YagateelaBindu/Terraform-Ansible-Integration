@@ -1,0 +1,6 @@
+---
+# vars file for linux_role
+ansible_winrm_server_cert_validation: ignore
+drive_letter: D
+partition_size: -1
+file_system: NTFS
