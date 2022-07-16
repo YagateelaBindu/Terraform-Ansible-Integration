@@ -1,0 +1,11 @@
+- name: Create a partition
+  community.windows.win_partition:
+      drive_letter: "{{drive_letter}}"
+      partition_size: "{{partition_size}}"
+      disk_number: 1
+- name: Format the newly created partition as NTFS and label it
+  community.windows.win_format:
+    drive_letter: "{{drive_letter}}"
+    file_system: "{{file_system}}"
+    new_label: Formatted
+    full: True
