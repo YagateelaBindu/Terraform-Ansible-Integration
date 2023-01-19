@@ -1,7 +1,7 @@
 ---
 # vars file for linux_role
 partion_device: /dev/sdb
-partion_size: 10GB
+partion_size: 50GB
 vname: myvolume
 lname: mylogicvol
 dir_name: /u01
